@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TKS Coaching — Relations Familiales & Amoureuses</title>
+<meta name="description" content="TKS Coaching accompagne les individus et les familles vers des relations plus épanouies. Coaching de vie spécialisé en relations familiales et amoureuses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #B8976A;
+    --gold-light: #D4B896;
+    --gold-pale: #F5EFE6;
+    --dark: #1A1714;
+    --dark-mid: #2E2A26;
+    --mid: #6B6259;
+    --light: #F9F6F2;
+    --white: #FFFFFF;
+    --border: rgba(184,151,106,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 5vw;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: padding 0.3s;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold) !important;
+    border: 1px solid var(--gold);
+    padding: 0.55rem 1.4rem;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--white) !important;
+  }
+
+  .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .burger span { display: block; width: 22px; height: 1px; background: var(--dark); transition: all 0.3s; }
+
+  /* ── HERO ── */
+  #accueil {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8vw 5vw 8vw 8vw;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-left h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--dark);
+    margin-bottom: 2rem;
+  }
+
+  .hero-left h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-left p {
+    font-size: 1rem;
+    color: var(--mid);
+    max-width: 42ch;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 1rem 2.2rem;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+
+  .btn-primary:hover { background: var(--dark); border-color: var(--dark); }
+
+  .btn-secondary {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--gold); }
+  .btn-secondary::after { content: '→'; font-size: 1rem; }
+
+  .hero-right {
+    position: relative;
+    background: var(--gold-pale);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-ornament {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border: 1px solid rgba(184,151,106,0.3);
+    border-radius: 50%;
+  }
+
+  .hero-ornament:nth-child(2) {
+    width: 50%;
+    height: 50%;
+    border-color: rgba(184,151,106,0.5);
+  }
+
+  .hero-quote {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 3rem;
+  }
+
+  .hero-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--dark-mid);
+    line-height: 1.4;
+    max-width: 28ch;
+  }
+
+  .hero-quote cite {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .hero-stat {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3rem;
+  }
+
+  .stat-item { text-align: center; }
+
+  .stat-num {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  /* ── SECTION UTILS ── */
+  section { padding: 7rem 8vw; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  .divider {
+    width: 3rem;
+    height: 1px;
+    background: var(--gold);
+    margin: 2rem 0;
+  }
+
+  /* ── ABOUT ── */
+  #a-propos {
+    background: var(--light);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 420px;
+  }
+
+  .about-img-frame {
+    width: 100%;
+    height: 100%;
+    background: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-img-frame::before {
+    content: '';
+    position: absolute;
+    inset: 2rem;
+    border: 1px solid var(--border);
+    z-index: 1;
+  }
+
+  .about-monogram {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem;
+    font-weight: 300;
+    color: rgba(184,151,106,0.25);
+    letter-spacing: -0.05em;
+    z-index: 0;
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: var(--gold);
+    color: var(--white);
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .about-badge strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .about-badge span {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  .about-text p {
+    color: var(--mid);
+    margin-bottom: 1.2rem;
+    font-size: 0.97rem;
+    line-height: 1.85;
+  }
+
+  .about-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .value-item {
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+  }
+
+  .value-item h4 {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .value-item p {
+    font-size: 0.85rem;
+    color: var(--mid);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--white); }
+
+  .services-header { max-width: 60ch; margin-bottom: 4rem; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    padding: 3rem 2.5rem;
+    border-right: 1px solid var(--border);
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card:last-child { border-right: none; }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  .service-card:hover { background: var(--gold-pale); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(184,151,106,0.2);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-detail {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .service-detail li {
+    font-size: 0.8rem;
+    color: var(--mid);
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .service-detail li::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .service-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.2s;
+  }
+
+  .service-link:hover { gap: 0.8rem; }
+
+  /* ── TÉMOIGNAGES ── */
+  #temoignages {
+    background: var(--dark);
+    color: var(--white);
+  }
+
+  #temoignages .section-title { color: var(--white); }
+  #temoignages .section-label { color: var(--gold-light); }
+
+  .temoignages-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem; }
+
+  .temoignages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .temoignage-card {
+    background: rgba(255,255,255,0.04);
+    padding: 2.5rem;
+    border: 1px solid rgba(184,151,106,0.15);
+    transition: background 0.3s;
+  }
+
+  .temoignage-card:hover { background: rgba(184,151,106,0.08); }
+
+  .stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1.5rem;
+  }
+
+  .star {
+    width: 10px;
+    height: 10px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .temoignage-card blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .temoignage-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-top: 1px solid rgba(184,151,106,0.2);
+    padding-top: 1.2rem;
+  }
+
+  .author-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+
+  .author-context {
+    font-size: 0.72rem;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── BLOG ── */
+  #blog { background: var(--light); }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+
+  .blog-card {
+    background: var(--white);
+    overflow: hidden;
+    transition: transform 0.3s;
+    border: 1px solid var(--border);
+  }
+
+  .blog-card:hover { transform: translateY(-4px); }
+
+  .blog-img {
+    height: 180px;
+    background: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blog-img-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: rgba(184,151,106,0.35);
+  }
+
+  .blog-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--white);
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border);
+  }
+
+  .blog-body { padding: 1.8rem 2rem; }
+
+  .blog-date {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .blog-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+  }
+
+  .blog-card p {
+    font-size: 0.85rem;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .blog-read-more {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: gap 0.2s;
+  }
+
+  .blog-read-more:hover { gap: 0.7rem; }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-info p {
+    color: var(--mid);
+    font-size: 0.97rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-items { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .contact-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+    font-size: 0.85rem;
+  }
+
+  .contact-item-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-item-value {
+    font-size: 0.9rem;
+    color: var(--dark);
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .form-group label {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--dark);
+    background: var(--light);
+    border: 1px solid var(--border);
+    padding: 0.85rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--gold);
+    background: var(--white);
+  }
+
+  .form-group textarea { min-height: 130px; resize: vertical; }
+
+  .form-submit {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    transition: all 0.25s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover { background: var(--dark); border-color: var(--dark); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark-mid);
+    padding: 4rem 8vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand .logo {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+    max-width: 28ch;
+  }
+
+  .footer-col h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .footer-col ul a {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    background: var(--dark);
+    padding: 1.2rem 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(184,151,106,0.15);
+  }
+
+  .footer-bottom p {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-bottom a {
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-bottom a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    animation: fadeUp 0.7s ease forwards;
+    opacity: 0;
+  }
+
+  .fade-up:nth-child(1) { animation-delay: 0.1s; }
+  .fade-up:nth-child(2) { animation-delay: 0.25s; }
+  .fade-up:nth-child(3) { animation-delay: 0.4s; }
+  .fade-up:nth-child(4) { animation-delay: 0.55s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #accueil { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { display: none; }
+    .hero-left { padding: 8rem 6vw 5rem; }
+    #a-propos { grid-template-columns: 1fr; }
+    .about-visual { max-width: 280px; margin: 0 auto 3rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .temoignages-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    #contact { grid-template-columns: 1fr; gap: 3rem; }
+    footer { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .burger { display: flex; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 4rem 5vw; }
+    footer { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+    .about-values { grid-template-columns: 1fr; }
+    .temoignages-header { flex-direction: column; }
+  }
+
+  /* ── MOBILE NAV ── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--white);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--dark);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:hover { color: var(--gold); }
+
+  .mobile-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 5vw;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--dark);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#accueil" class="logo">TKS <span>Coaching</span></a>
+  <ul class="nav-links">
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#a-propos">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+  </ul>
+  <div class="burger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="#accueil" onclick="toggleMenu()">Accueil</a>
+  <a href="#a-propos" onclick="toggleMenu()">À propos</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#temoignages" onclick="toggleMenu()">Témoignages</a>
+  <a href="#blog" onclick="toggleMenu()">Blog</a>
+  <a href="#contact" onclick="toggleMenu()">Me contacter</a>
+</div>
+
+<!-- HERO -->
+<section id="accueil">
+  <div class="hero-left">
+    <p class="hero-eyebrow fade-up">Coach de vie certifié · Paris</p>
+    <h1 class="fade-up">Construire des <em>liens</em> qui vous élèvent</h1>
+    <p class="fade-up">Spécialiste des relations familiales et amoureuses, je vous accompagne à transformer vos dynamiques relationnelles pour une vie plus harmonieuse et épanouissante.</p>
+    <div class="hero-actions fade-up">
+      <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+      <a href="#services" class="btn-secondary">Découvrir mes services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-ornament"></div>
+    <div class="hero-ornament"></div>
+    <div class="hero-quote">
+      <blockquote>« La qualité de vos relations détermine la qualité de votre vie »</blockquote>
+      <cite>TKS Coaching</cite>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-item">
+        <span class="stat-num">200+</span>
+        <span class="stat-label">Clients accompagnés</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5 ans</span>
+        <span class="stat-label">D'expérience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">96%</span>
+        <span class="stat-label">Satisfaction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="a-propos">
+  <div class="about-visual">
+    <div class="about-img-frame">
+      <div class="about-monogram">TKS</div>
+    </div>
+    <div class="about-badge">
+      <strong>5+</strong>
+      <span>ans d'expertise</span>
+    </div>
+  </div>
+  <div class="about-text">
+    <p class="section-label">À propos</p>
+    <h2 class="section-title">Une approche humaine,<br><em>bienveillante et transformatrice</em></h2>
+    <div class="divider"></div>
+    <p>Je suis coach de vie certifié, spécialisé dans l'accompagnement des individus et des familles qui souhaitent améliorer leurs relations. Que ce soit dans le cadre familial ou amoureux, je vous aide à mieux vous comprendre et à mieux comprendre l'autre.</p>
+    <p>Ma méthode s'appuie sur des outils éprouvés de communication non-violente, de psychologie positive et de techniques cognitivo-comportementales pour vous aider à créer des connexions authentiques et durables.</p>
+    <p>Chaque parcours est unique. Je construis avec vous un programme sur mesure, à votre rythme, pour des résultats profonds et durables.</p>
+    <div class="about-values">
+      <div class="value-item">
+        <h4>Bienveillance</h4>
+        <p>Un espace sécurisant sans jugement</p>
+      </div>
+      <div class="value-item">
+        <h4>Authenticité</h4>
+        <p>Un accompagnement sincère et honnête</p>
+      </div>
+      <div class="value-item">
+        <h4>Sur mesure</h4>
+        <p>Un programme adapté à votre situation</p>
+      </div>
+      <div class="value-item">
+        <h4>Durabilité</h4>
+        <p>Des outils concrets pour la vie</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <p class="section-label">Mes services</p>
+    <h2 class="section-title">Un accompagnement<br><em>complet et personnalisé</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3>Coaching Familial</h3>
+      <p>Améliorez les relations au sein de votre famille, renforcez les liens et désamorcez les conflits pour créer un foyer serein et épanouissant.</p>
+      <ul class="service-detail">
+        <li>Médiation parent-enfant</li>
+        <li>Communication intergénérationnelle</li>
+        <li>Gestion des conflits familiaux</li>
+        <li>Recomposition familiale</li>
+      </ul>
+      <a href="#contact" class="service-link">En savoir plus →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3>Coaching Amoureux</h3>
+      <p>Développez une relation amoureuse épanouissante, retrouvez la complicité ou préparez-vous à accueillir un partenaire dans votre vie.</p>
+      <ul class="service-detail">
+        <li>Renforcement du couple</li>
+        <li>Communication affective</li>
+        <li>Gestion de la jalousie</li>
+        <li>Préparation à la relation</li>
+      </ul>
+      <a href="#contact" class="service-link">En savoir plus →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3>Bilan Relationnel</h3>
+      <p>Faites le point sur vos schémas relationnels, identifiez vos forces et vos axes d'évolution pour des relations plus conscientes et choisies.</p>
+      <ul class="service-detail">
+        <li>Séance de diagnostic (90 min)</li>
+        <li>Identification des schémas</li>
+        <li>Plan d'action personnalisé</li>
+        <li>Ressources et exercices</li>
+      </ul>
+      <a href="#contact" class="service-link">En savoir plus →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section id="temoignages">
+  <div class="temoignages-header">
+    <div>
+      <p class="section-label">Témoignages</p>
+      <h2 class="section-title">Ce que disent<br><em>mes clients</em></h2>
+    </div>
+  </div>
+  <div class="temoignages-grid">
+    <div class="temoignage-card">
+      <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+      <blockquote>« Grâce à TKS Coaching, ma relation avec mes enfants a été transformée. J'ai appris à écouter vraiment, sans chercher à contrôler. Une expérience précieuse. »</blockquote>
+      <div class="temoignage-author">
+        <div class="author-avatar">MC</div>
+        <div>
+          <div class="author-name">Marie-Claire D.</div>
+          <div class="author-context">Coaching familial · 3 mois</div>
+        </div>
+      </div>
+    </div>
+    <div class="temoignage-card">
+      <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+      <blockquote>« Mon partenaire et moi sommes passés d'une communication épuisante à une vraie complicité. Je recommande chaleureusement cette approche. »</blockquote>
+      <div class="temoignage-author">
+        <div class="author-avatar">TK</div>
+        <div>
+          <div class="author-name">Thomas K.</div>
+          <div class="author-context">Coaching couple · 2 mois</div>
+        </div>
+      </div>
+    </div>
+    <div class="temoignage-card">
+      <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+      <blockquote>« Le bilan relationnel m'a ouvert les yeux sur des patterns que je répétais depuis l'enfance. Un investissement inestimable pour ma vie entière. »</blockquote>
+      <div class="temoignage-author">
+        <div class="author-avatar">SA</div>
+        <div>
+          <div class="author-name">Sophie A.</div>
+          <div class="author-context">Bilan relationnel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <p class="section-label">Blog & Ressources</p>
+  <h2 class="section-title">Conseils et <em>réflexions</em></h2>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-icon">♡</div>
+        <span class="blog-tag">Relations amoureuses</span>
+      </div>
+      <div class="blog-body">
+        <p class="blog-date">15 mars 2025</p>
+        <h3>5 habitudes qui renforcent l'intimité dans le couple</h3>
+        <p>L'intimité ne se préserve pas seule. Découvrez les pratiques simples que les couples épanouis intègrent au quotidien.</p>
+        <a href="#contact" class="blog-read-more">Lire l'article →</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-icon">⌂</div>
+        <span class="blog-tag">Famille</span>
+      </div>
+      <div class="blog-body">
+        <p class="blog-date">2 février 2025</p>
+        <h3>Comment parler à ses adolescents sans créer de murs</h3>
+        <p>La communication avec les adolescents est souvent source de frustration. Ces clés vous aideront à rester connecté.</p>
+        <a href="#contact" class="blog-read-more">Lire l'article →</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-icon">✦</div>
+        <span class="blog-tag">Développement personnel</span>
+      </div>
+      <div class="blog-body">
+        <p class="blog-date">10 janvier 2025</p>
+        <h3>Comprendre vos schémas relationnels pour les transformer</h3>
+        <p>Nos relations adultes portent souvent l'empreinte de notre histoire familiale. Apprenez à les reconnaître.</p>
+        <a href="#contact" class="blog-read-more">Lire l'article →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Commençons votre <em>transformation</em></h2>
+    <div class="divider"></div>
+    <p>La première étape est souvent la plus difficile. Je vous invite à me contacter pour une séance découverte offerte de 30 minutes, sans engagement.</p>
+    <div class="contact-items">
+      <div class="contact-item">
+        <div class="contact-icon">✉</div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value">contact@tks-coaching.fr</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">☎</div>
+        <div>
+          <div class="contact-item-label">Téléphone</div>
+          <div class="contact-item-value">+33 (0)6 XX XX XX XX</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">◎</div>
+        <div>
+          <div class="contact-item-label">Disponibilité</div>
+          <div class="contact-item-value">En présentiel (Paris) & en ligne</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form class="contact-form" onsubmit="handleSubmit(event)">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" placeholder="Votre prénom" required>
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" placeholder="Votre nom" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="votre@email.com" required>
+    </div>
+    <div class="form-group">
+      <label for="sujet">Je souhaite...</label>
+      <select id="sujet">
+        <option value="">Choisissez une option</option>
+        <option>Un coaching familial</option>
+        <option>Un coaching amoureux</option>
+        <option>Un bilan relationnel</option>
+        <option>Une séance découverte gratuite</option>
+        <option>Obtenir des informations</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="Partagez brièvement votre situation..."></textarea>
+    </div>
+    <button type="submit" class="form-submit">Envoyer le message</button>
+    <p id="form-success" style="display:none; color: var(--gold); font-size:0.85rem; margin-top:0.5rem;">
+      ✓ Message envoyé ! Je vous répondrai dans les 24h.
+    </p>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <a href="#accueil" class="logo">TKS <span>Coaching</span></a>
+    <p>Accompagnement professionnel en coaching de vie, spécialisé dans les relations familiales et amoureuses.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#a-propos">À propos</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Services</h4>
+    <ul>
+      <li><a href="#services">Coaching familial</a></li>
+      <li><a href="#services">Coaching amoureux</a></li>
+      <li><a href="#services">Bilan relationnel</a></li>
+      <li><a href="#contact">Séance découverte</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Légal</h4>
+    <ul>
+      <li><a href="#">Mentions légales</a></li>
+      <li><a href="#">Politique de confidentialité</a></li>
+      <li><a href="#">CGV</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2025 TKS Coaching · Tous droits réservés</p>
+  <p>Réalisé avec soin · <a href="#accueil">Retour en haut ↑</a></p>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('form-success').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => {
+      document.getElementById('form-success').style.display = 'none';
+    }, 5000);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .temoignage-card, .blog-card, .value-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
